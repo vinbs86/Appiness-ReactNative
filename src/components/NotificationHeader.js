@@ -7,26 +7,30 @@ import {
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
-export default class HeaderInner extends Component{
+export default class NotificationHeader extends Component{
 
 
   render() {
     return (
       <View style={styles.horizontalcontainer}>
-      <Image source={require('../images/appiness-logo.png')}/>
+
       <View style={styles.notistyle}>
 
       <TouchableHighlight underlayColor={'#4cbbe9'} onPress={this.goToNotification.bind(this)}>
-      <Image source={require('../images/notification.png')}/>
+      <Image source={require('../images/back.png')}/>
       </TouchableHighlight>
 
       </View>
+
+
+      <Image source={require('../images/appiness-logo.png')}/>
+
       </View>
     );
   }
 
   goToNotification(event) {
-    Actions.notificationlist();
+    Actions.popTo('homescreen');
   }
 
 
@@ -38,15 +42,16 @@ const styles = StyleSheet.create({
   horizontalcontainer: {
     flexDirection: 'row',
     paddingTop:50,
-    paddingLeft: 30,
+    paddingRight: 30,
     backgroundColor: '#4cbbe9'
   },
 
   notistyle: {
-    flex:1,
     backgroundColor: '#4cbbe9',
-    alignItems: 'flex-end',
-    paddingRight:20
+    alignItems: 'flex-start',
+    paddingLeft:20,
+    paddingRight:15,
+    paddingTop:17
   }
 
 });

@@ -7,19 +7,18 @@ import {
   View,
   Alert
 } from 'react-native';
-import BottomBar from '../components/BottomBar'
-import HeaderInner from '../components/HeaderInner'
 
-export default class HomeScreenContainer extends Component {
+import NotificationHeader from '../components/NotificationHeader'
 
+export default class NotificationList extends Component {
 
   render() {
     return (
 
 <View style={styles.container}>
-<HeaderInner/>
+<NotificationHeader/>
 
-<BottomBar/>
+
 </View>
     );
   }
